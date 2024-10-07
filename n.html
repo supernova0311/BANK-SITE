@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women Safety SOS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #ff4d4d;
+    }
+
+    .sos-button {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .sos-button:hover {
+      background-color: #e60000;
+    }
+
+    input[type="text"], input[type="tel"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .message {
+      color: green;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Emergency SOS</h1>
+    <form id="sosForm">
+      <input type="tel" id="contact" placeholder="Emergency Contact Number" required>
+      <textarea id="message" placeholder="Custom Emergency Message"></textarea>
+      <button type="button" class="sos-button" onclick="sendSOS()">Send SOS</button>
+    </form>
+    <p class="message" id="statusMessage"></p>
+  </div>
+
+  <script>
+    function sendSOS() {
+      const contact = document.getElementById('contact').value;
+      const message = document.getElementById('message').value || 'Help! I am in danger.';
+      
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+
+          const alertMessage = `${message}\nLocation: https://maps.google.com/?q=${lat},${lon}`;
+          
+          // Simulate sending message to emergency contact
+          document.getElementById('statusMessage').innerText = 'SOS Sent to ' + contact;
+          
+          console.log('Message:', alertMessage);
+        });
+      } else {
+        document.getElementById('statusMessage').innerText = 'Location access denied.';
+      }
+    }
+  </script>
+
+</body>
+</html>

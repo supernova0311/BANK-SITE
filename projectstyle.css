@@ -1,0 +1,80 @@
+.head{
+    border: 2px solid orange;
+    background-color: aquamarine;
+    border-radius: 5px;
+    height: 100px;
+    padding-top: 10px;
+    font-size: large;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.logo{
+    justify-content: center;
+    display: flex;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+}
+.gty{
+padding-top: 70px;
+padding-right: 5px;
+color: black;
+}
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }  
+
+
+
+body{
+  
+   background-image: url(https://img.freepik.com/free-vector/graph-chart-with-moving-up-arrow-stock-market-financial-investment-diagram-blue-background_56104-1814.jpg?size=626&ext=jpg) ;
+   color: aquamarine;
+  
+   background-attachment: fixed;
+  background-size: cover ;
+
+}
+
+.img-hover-zoom {
+  height: 200px; 
+  overflow: hidden; 
+}
+
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.5);
+}
+.gui{
+    color: black;
+}
+.az{
+    color: chocolate;
+}
+.rty{
+    color: red;
+}
